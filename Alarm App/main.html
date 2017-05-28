@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intern</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script type="text/javascript "  src="angular.js"></script>
+
+
+
+      <style >
+      	.info{
+      		text-align: center;
+      	}
+
+      	input{
+      		margin: 10px;
+      	}
+      </style>
+
+</head>
+
+
+<body ng-app='myApp' ng-controller='alarm' class="info" >
+
+<h2 >{{time}}</h2>
+{{name}}<hr>
+
+
+<div class="panel panel-default panel-success">
+
+<div class="panel-heading">Enter the Alarm Details</div>
+<div class="panel-body ">
+<form>
+
+Date:<input type="text" name="date" ng-model="Date"><br>
+
+Hrs:<input type="text" name="minutes" ng-model="Hours"><br>
+
+Min:<input type="text" name="minutes" ng-model="Minutes"><br>
+
+</form>
+
+<button class="btn btn-primary " ng-click="submit()">Add Alarm</button>
+</div>
+</div>
+
+</body>
+</html>
