@@ -7,14 +7,16 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script type="text/javascript "  src="angular.js"></script>
-
-
+ <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
       <style >
       	.info{
       		text-align: center;
                   
       	}
+        body{
+          font-family: 'Pacifico', cursive;
+        }
 
       	input{
       		margin: 10px;
@@ -32,7 +34,7 @@
 
 <div class="panel panel-default panel-success info">
 
-<div class="panel-heading">Enter the Alarm Details (Enter In 24hrs Format)</div>
+<div class="panel-heading">Enter the Alarm Details </div>
 <div class="panel-body ">
 <form>
 
@@ -71,7 +73,7 @@ Min:<input type="text" name="minutes" ng-model="Minutes"><br>
       <tr>
       
         <th>Date(This Month Only)</th>
-        <th>Hours(24 hrs format)</th>
+        <th >Hours</th>
         <th>Minutes(min)</th>
         <th>AM/PM</th>
         <th>Delete</th>
@@ -82,7 +84,9 @@ Min:<input type="text" name="minutes" ng-model="Minutes"><br>
       <tr ng-repeat="x in info" >
       
       <td>{{x.Date}}</td>
-      <td>{{x.Hours}}</td>
+      <td >
+        <div ng-if="timeformat(x.Hours)">{{time_format}}</div>
+      </td>
       <td>{{x.Minutes}}</td>
       <td>
           <div ng-if="x.AM==0">AM

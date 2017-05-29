@@ -39,9 +39,30 @@ $scope.submit =function(){
 
     });
 
+
+
   }
 
     }
+
+    $scope.timeformat = function(time){
+
+      if(time>12){
+          time = time- 12;
+          $scope.time_format= time;
+
+      }
+        else{
+          alert()
+          $scope.time_format=time;
+        }
+
+
+      return time;
+
+
+    }
+
 
        $scope.displayData = function(){
 
@@ -150,7 +171,7 @@ app.controller('loginCtrl',function($scope , $location ,$rootScope){
 
   $scope.pword = function()
   {
-    alert('username=admin amd password=admin' );
+    alert('username=admin amd password=admin  Another database can be created as I created for Alarm page to handele the username and password !!' );
   }
 
 });
