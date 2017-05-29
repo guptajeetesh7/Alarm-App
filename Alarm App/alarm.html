@@ -71,7 +71,7 @@ Min:<input type="text" name="minutes" ng-model="Minutes"><br>
 <table class="table table-hover  table-condensed">
     <thead>
       <tr>
-      
+        <th>S.No</th>
         <th>Date(This Month Only)</th>
         <th >Hours</th>
         <th>Minutes(min)</th>
@@ -82,7 +82,7 @@ Min:<input type="text" name="minutes" ng-model="Minutes"><br>
     <tbody>
 
       <tr ng-repeat="x in info" >
-      
+      <td>{{$index + 1}}</td>
       <td>{{x.Date}}</td>
       <td >
         <div ng-if="timeformat(x.Hours)">{{time_format}}</div>

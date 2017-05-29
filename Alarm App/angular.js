@@ -3,6 +3,7 @@ var app = angular.module("myApp",['ngRoute']);
 app.controller('alarm',function($scope,$interval,$http){
    
    $scope.info="";
+   $scope.count=0;
 
 
 
@@ -67,6 +68,7 @@ $scope.submit =function(){
        $scope.displayData = function(){
 
 
+      $scope.count=0;
       $http.get("getdata.php").success(function(data){
 
           $scope.info=data;
