@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> LOGIN PORTAL</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type="text/javascript "  src="angular.js"></script>
+      <link rel="stylesheet"  href="css/font-awesome.min.css">
+</head>
+
+
+<body >
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">FOSSASIA WEB DEVELOPERS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Languages<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JAVASCRIPT</a></li>
+          </ul>
+        </li>
+        <li><a href="#">ANGULAR JS</a></li>
+        <li><a href="#">MySQL</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1 style="text-align: center; margin-top: 100px;">WELCOME TO ALARM APP </h1>
+
+<div class="container-fluid" style="text-align: center;" >
+
+	<div class="jumbotron" style="background-color: #607D8B;">
+   <div><span class="glyphicon glyphicon-user"></span> UserName : <input type="text" ng-model='username'><br></div>
+	<div style="margin-top: 20px;"><span class="glyphicon glyphicon-log-in " style="margin-right: 5px;"></span>  Password : <input type="text" ng-model='password'><br></div>
+
+	<div style="margin-top: 20px;  "><button class="btn btn-primary" ng-click="Login()">Log In </button>
+
+	<button class="btn btn-primary" ng-click="pword()" style="margin-left: 30px;">Sign Up</button>
+
+	</div>
+	
+
+	</div>
+	</div>
+
+	 <section>
+        <h2 align="center">~ Find me here ~</h2>
+        <div class="social-media" align="center">
+            <span class="fb-icon">
+                    <a href="https://www.facebook.com/jeetesh.gupta.75" target="_blank" alt="facebook-profile">
+                        <i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a>
+                </span>
+            <span class="github-icon" style="margin-left: 10px;">
+                    <a href="//github.com/guptajeetesh7" target="_blank" alt="github-profile">
+                        <i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                </span>
+           
+        </div>
+    </section>
+    <footer class="copyrights">
+        <p align="center">© Copyrights 2017: Jeetesh Gupta</p>
+    </footer>
+
+	
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-var app = angular.module("myApp",[]);
+var app = angular.module("myApp",['ngRoute']);
 
 app.controller('alarm',function($scope,$interval,$http){
    
@@ -9,14 +9,21 @@ app.controller('alarm',function($scope,$interval,$http){
 
 $scope.submit =function(){
 
- $http.post("index.php",{ 'Date' : $scope.Date  , 'Hours' : $scope.Hours , 'Minutes' : $scope.Minutes })
+  if($scope.Date==null || $scope.Hours==null || $scope.Minutes==null)
+  {
+    alert("Please Fill All The Entry");
+  }
+
+  else{
+
+ $http.post("index.php",{ 'Date' : $scope.Date  , 'Hours' : $scope.Hours , 'Minutes' : $scope.Minutes ,'am' : 0 })
 
     .success(function(){
 
         console.log("Data transfer");
-        $scope.Date = "";
-        $scope.Hours ="";
-        $scope.Minutes ="";
+        $scope.Date = null;
+        $scope.Hours =null;
+        $scope.Minutes =null;
 
         alert ("Alarm added");
 
@@ -24,16 +31,23 @@ $scope.submit =function(){
 
     });
 
-    $scope.displayData = function(){
+  }
+
+    }
+
+       $scope.displayData = function(){
+
 
       $http.get("getdata.php").success(function(data){
 
           $scope.info=data;
+
       });
 
     }
 
-  }
+
+   
 
   $scope.time = new Date().toLocaleTimeString();
   $interval(function () {
@@ -73,5 +87,62 @@ $scope.submit =function(){
 
   	
 
+
+});
+
+
+
+app.config(function($routeProvider){
+
+  $routeProvider
+    .when('/',{
+
+      templateUrl : "login.html",
+      controller : 'loginCtrl'
+      
+    })
+
+    .when('/alarm',{
+
+      resolve : {
+
+        'check' : function($rootScope ,$location){
+          if (!$rootScope.loggedIn) {
+            $location.path("/");
+          }
+        }
+
+      },
+
+      templateUrl : 'alarm.html',
+      controller : 'alarm'
+    })
+
+    
+});
+
+
+app.controller('loginCtrl',function($scope , $location ,$rootScope){
+
+   $scope.Login=function(){
+
+   
+
+  if($scope.username== "admin" && $scope.password=="admin")
+  {
+    $rootScope.loggedIn=true;  
+    $location.path('/alarm');
+    alert("Directing you");
+  }
+  else{
+
+    alert("Wrong account");
+  }
+  }
+
+  $scope.pword = function()
+  {
+    alert('username=admin amd password=admin' );
+  }
 
 });
