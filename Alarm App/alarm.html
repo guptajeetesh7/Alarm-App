@@ -42,6 +42,16 @@ Hrs:<input type="text" name="minutes" ng-model="Hours"><br>
 
 Min:<input type="text" name="minutes" ng-model="Minutes"><br>
 
+<div>
+
+    <div style="margin-right: 5px;">Select AM/PM </div>
+    <select  ng-model="ampm">
+
+    <option value="0">AM</option>
+    <option value="1">PM</option>
+  
+    </select>
+</div>
 </form>
 
 </div>
@@ -63,7 +73,7 @@ Min:<input type="text" name="minutes" ng-model="Minutes"><br>
         <th>Date(This Month Only)</th>
         <th>Hours(24 hrs format)</th>
         <th>Minutes(min)</th>
-
+        <th>AM/PM</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -74,11 +84,22 @@ Min:<input type="text" name="minutes" ng-model="Minutes"><br>
       <td>{{x.Date}}</td>
       <td>{{x.Hours}}</td>
       <td>{{x.Minutes}}</td>
+      <td>
+          <div ng-if="x.AM==0">AM
+            
+          </div>
+
+          <div ng-if="x.AM==1">PM</div>
+
+
+      </td>
       <td class="btn btn-primary" ng-click="delete(x.id)">Delete </td>
 
       </tr>
     </tbody>
   </table>
+
+  
 
 </body>
 </html>

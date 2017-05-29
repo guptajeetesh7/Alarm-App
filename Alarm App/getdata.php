@@ -6,7 +6,7 @@ mysql_select_db('alarm');
 $output= array();
 
 
-$query = "SELECT `id`,`Date`, `Hours`, `Minutes` FROM `jeetesh` ";
+$query = "SELECT `id`,`Date`, `Hours`, `Minutes` ,`AM` FROM `jeetesh` ";
 
 if($query_run=mysql_query($query))
 {

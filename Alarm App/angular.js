@@ -16,7 +16,14 @@ $scope.submit =function(){
 
   else{
 
- $http.post("index.php",{ 'Date' : $scope.Date  , 'Hours' : $scope.Hours , 'Minutes' : $scope.Minutes ,'am' : 0 })
+    if($scope.ampm==1){
+
+          $scope.Hours = parseInt($scope.Hours) + 12 ;
+    }
+
+
+
+ $http.post("index.php",{ 'Date' : $scope.Date  , 'Hours' : $scope.Hours , 'Minutes' : $scope.Minutes ,'am' : $scope.ampm })
 
     .success(function(){
 
@@ -24,6 +31,7 @@ $scope.submit =function(){
         $scope.Date = null;
         $scope.Hours =null;
         $scope.Minutes =null;
+        $scope.ampm=null;
 
         alert ("Alarm added");
 

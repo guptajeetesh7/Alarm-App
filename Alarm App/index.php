@@ -13,16 +13,20 @@ $sql = "CREATE DATABASE `alarm`";
 
 mysql_query($sql);
 
+/*$drop = "DROP TABLE `alarm`.`jeetesh`";
+
+mysql_query($drop);*/
 
 
-$table ="CREATE TABLE `alarm`.`jeetesh` ( `id` INT NOT NULL AUTO_INCREMENT , `Date` INT NOT NULL , `Hours` INT NOT NULL , `Minutes` INT NOT NULL , `AM/PM` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
+
+$table ="CREATE TABLE `alarm`.`jeetesh` ( `id` INT NOT NULL AUTO_INCREMENT , `Date` INT NOT NULL , `Hours` INT NOT NULL , `Minutes` INT NOT NULL , `AM` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
 
 mysql_query($table);
 
 
 mysql_select_db("alarm");
 
-$query =  " INSERT INTO `jeetesh`( `Date`, `Hours`, `Minutes`, `AM/PM`) VALUES ( $date , $hours ,$minutes ,$am )" ;
+$query =  " INSERT INTO `jeetesh`( `Date`, `Hours`, `Minutes`, `AM`) VALUES ( $date , $hours ,$minutes ,$am )" ;
 
 if($query_run = mysql_query($query))
 {
